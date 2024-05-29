@@ -14,17 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("api/fx-deal")
+@RequestMapping("/api/fx-deal")
 public class FXDealController {
 
     private final IFXDeal service;
-
 
     @PostMapping
     public ResponseEntity<FXDealDto> create(@Valid @RequestBody FXDealDto fxDealDto){
 
         return service.create(fxDealDto)
-                .map(fxDeal -> new ResponseEntity(fxDeal, HttpStatus.CREATED))
+                .map(fxDeal -> new ResponseEntity(fxDeal,HttpStatus.CREATED))
                 .orElse(new ResponseEntity<>(null,HttpStatus.OK));
     }
 }
