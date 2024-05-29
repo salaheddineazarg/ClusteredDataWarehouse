@@ -1,9 +1,7 @@
 package com.java.clustereddatawarehouse.entities;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,6 +33,7 @@ public class FXDeal {
     private String toCurrencyIsoCode;
 
     @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime dealTimestamp;
 
     @NotNull(message = "Deal amount must not be null")
