@@ -9,5 +9,5 @@ import java.util.Optional;
 
 public interface IFXDeal {
 
-    Optional<FXDeal> create(FXDealDto fxDealDto);
+    Optional<FXDealDto> create(FXDealDto fxDealDto);
 }
